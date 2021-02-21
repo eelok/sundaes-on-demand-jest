@@ -6,21 +6,21 @@ const SummaryForm = () =>{
     const [isEnabled, setIsEnabled] = useState(false);
 
     return(
-        <div>
+        <form>
             <input
                 type="checkbox"
                 id="termsAndConditions"
-                defaultChecked={isEnabled}
+                checked={isEnabled}
                 onChange={(e) => setIsEnabled(e.target.checked)}
             />
-            <label htmlFor="termsAndConditions">I am agree to Terms and Conditions</label>
+            <label htmlFor="termsAndConditions">I agree to Terms and Conditions</label>
 
             <button type='button'
                 disabled = {!isEnabled}
             >
                 Confirm order
             </button>
-        </div>
+        </form>
     );
 }
 
