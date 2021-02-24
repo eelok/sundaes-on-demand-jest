@@ -26,8 +26,8 @@ const Options = ({optionType}) => {
             name={item.name}
             imagePath={item.imagePath}
         />
-    ))
+    ));
 
-    return (<Row>{optionItems}</Row>)
+    return (<Row>{optionItems}</Row>);
 }
 export default Options;
