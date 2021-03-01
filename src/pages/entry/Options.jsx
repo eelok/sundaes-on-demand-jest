@@ -22,15 +22,32 @@ const Options = ({optionType}) => {
         return <AlertBanner/>
     }
     let ItemComponent = optionType === 'scoops' ? ScoopOptions : ToppingOption
+    if (optionType === 'scoops') {
+        return (<Row>{items.map(item => (
+            <ScoopOptions
+                key={item.name}
+                name={item.name}
+                imagePath={item.imagePath}
+            />
+        ))}</Row>)
+    } else {
+        return (<Row>{items.map(item => (
+            <ToppingOption
+                key={item.name}
+                name={item.name}
+                imagePath={item.imagePath}
+            />
+        ))}</Row>)
+    }
 
-    const optionItems = items.map(item => (
-        <ItemComponent
-            key={item.name}
-            name={item.name}
-            imagePath={item.imagePath}
-        />
-    ));
-
-    return (<Row>{optionItems}</Row>);
+    // const optionItems = items.map(item => (
+    //     <ItemComponent
+    //         key={item.name}
+    //         name={item.name}
+    //         imagePath={item.imagePath}
+    //     />
+    // ));
+    //
+    // return (<Row>{optionItems}</Row>);
 }
 export default Options;
